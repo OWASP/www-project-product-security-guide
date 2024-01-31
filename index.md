@@ -9,7 +9,9 @@ pitch: A very brief, one-line description of your project
 
 ---
 
-This is an example of a Project or Chapter Page.  Please change these items to indicate the actual information you wish to present.  In addition to this information, the 'front-matter' above this text should be modified to reflect your actual information.  An explanation of each of the front-matter items is below:
+The OWASP Product Security Guide project aims to educate developers, designers, architects, managers, and organizations about security considerations in developing and maintaining products such as hardware, software, firmware, and physical items. This project will provide a curated list of vulnerabilities commonly encountered in product security, highlighting their impact, ease of exploitation, and real-world prevalence. The project seeks to raise awareness within the development community and promote an approach to addressing security challenges.
+
+The primary objective is to advocate for improved security practices in product development, offering practical insights and remediation strategies. The OWASP Product Security Guide enhances the security posture of software products, contributing to a more robust and resilient software ecosystem. You can read our [group charter](https://github.com/OWASP/www-project-product-security-guide/wiki) for more information
 
 layout: This is the layout used by project and chapter pages.  You should leave this value as col-sidebar
 
