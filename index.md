@@ -8,8 +8,10 @@ type:
 pitch: The OWASP Product Security Guide project educates developers and organizations on security considerations for various products, offering a curated list of vulnerabilities and promoting awareness and solutions within the development community.
 
 ---
+
 <img src="https://github.com/OWASP/www-project-product-security-guide/assets/70095030/1352e88b-fa9e-4e07-aca6-f6b7f6fe8fb2" width="500" height ="200">
 <img src="https://github.com/OWASP/www-project-product-security-guide/assets/70095030/9b96c3e0-503d-4105-be22-efeafe3a6263" align="right"/>
+
   
 The OWASP Product Security Guide project aims to educate developers, designers, architects, managers, and organizations about security considerations in developing and maintaining products such as hardware, software, firmware, and physical items. This project will provide a curated list of vulnerabilities commonly encountered in product security, highlighting their impact, ease of exploitation, and real-world prevalence. The project seeks to raise awareness within the development community and promote an approach to addressing security challenges.
 
