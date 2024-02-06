@@ -5,7 +5,6 @@ Welcome to the GitHub repository for the OWASP Product Security Guide. This guid
 ## Project Lead
 Yuvraj Singh  
 Email: [officialsyuvrajsingh@gmail.com](mailto:officialsyuvrajsingh@gmail.com)
-
 LinkedIn: [Yuvraj Singh](https://www.linkedin.com/in/yuvraj-singh-01/)
 
 ## Contributions
