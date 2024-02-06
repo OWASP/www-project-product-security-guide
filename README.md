@@ -17,7 +17,7 @@ To contribute to the project, you have several options:
    
 2. **Participate in Content Development**:
    - 📥 Send your suggestions to the project leader.
-   - 👋 Join `#owasp-product-security-guide` in our Slack workspace.
+   - 👋 Join [`#owasp-product-security-guide`](https://owasp.slack.com/archives/C06GGTMRX0C) in our Slack workspace.
    - 🗣️ Discuss with the project leader how to become part of the writing group.
    - 💡 Propose your concepts or submit an issue.
    - 📄 Fork our repo and submit a Pull Request for concrete fixes (e.g., grammar/typos) or content already approved by the core team.
