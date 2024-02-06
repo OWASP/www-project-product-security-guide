@@ -1,6 +1,8 @@
-MIT License
+## License
 
-Copyright (c) [2024] [OWASP Product Security Guide project]
+The OWASP Product Security Guide project is licensed under the [MIT License]([LICENSE](https://github.com/OWASP/www-project-product-security-guide?tab=MIT-1-ov-file)).
+
+Copyright (c) [2024] [OWASP Product Security Guide](https://owasp.org/www-project-product-security-guide/#)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
