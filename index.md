@@ -34,17 +34,17 @@ SDLC and [supply chain vulnerabilities](https://www.fortinet.com/resources/cyber
 
 During this initial stage, new feature requirements are gathered from different stakeholders. It is crucial to recognize any <span style="color:blue">security considerations</span> associated with the functional requirements being gathered for the upcoming release.
 
-- **Sample functional requirement:** user needs the ability to verify their contact information before they are able to renew their membership.
+- **<span style="color:blue">Sample functional requirement:</span>** user needs the ability to verify their contact information before they are able to renew their membership.
 
-- **Sample <span style="color:blue">security consideration:</span>** users should be able to see only their own contact information and no one else’s.
+- **<span style="color:blue">Sample security consideration:</span>** users should be able to see only their own contact information and no one else’s.
 
 ## Phase 2: Design
 
 This stage converts in-scope requirements into a plan for how the actual application should appear. Functional requirements outline actions to take place, while security requirements concentrate on actions to avoid.
 
-- **Sample functional design:** page should retrieve the user’s name, email, phone, and address from CUSTOMER_INFO table in the database and display it on screen.
+- **<span style="color:blue">Sample functional design:</span>** page should retrieve the user’s name, email, phone, and address from CUSTOMER_INFO table in the database and display it on screen.
 
-- **Sample <span style="color:blue">security concern:</span>** we must verify that the user has a valid session token before retrieving information from the database. If absent, the user should be redirected to the login page.
+- **<span style="color:blue">Sample security concern:</span>** we must verify that the user has a valid session token before retrieving information from the database. If absent, the user should be redirected to the login page.
 
 ## Phase 3: Development
 
@@ -69,7 +69,7 @@ Verification at this phase may include:
 
 The narrative continues beyond the application release. Vulnerabilities, initially overlooked, may surface long after the release. These issues may exist in the code developers crafted but are increasingly detected in the foundational open-source components comprising the application. This results in a rise in [zero-days](https://en.wikipedia.org/wiki/Zero-day_(computing))—previously unknown vulnerabilities identified in production by the application’s maintainers.
 
-The development team must then patch these vulnerabilities, a process that might necessitate substantial rewrites of application functionality. Vulnerabilities at this stage can also originate from external penetration tests by ethical hackers or submissions through **bug bounty** programs. Addressing such production issues requires careful planning and inclusion in future releases.
+The development team must then patch these vulnerabilities, a process that might necessitate substantial rewrites of application functionality. Vulnerabilities at this stage can also originate from external penetration tests by ethical hackers or submissions through [bug bounty](https://hackerone.com/bug-bounty-programs) programs. Addressing such production issues requires careful planning and inclusion in future releases.
 
 ## Role of AI/LLM in product security
 
@@ -97,6 +97,6 @@ The development team must then patch these vulnerabilities, a process that might
 
 **Additional Resources:**
 
-- <span style="color:blue">**Retrieval vs. poison — Fighting AI supply chain attacks:**</span> [Link](https://www.elastic.co/security-labs/elastic-users-protected-from-suddenicon-supply-chain-attack)
-- <span style="color:blue">**Detecting Poisoned AI Models:**</span> [Link](https://arxiv.org/pdf/2204.00032)
-- <span style="color:blue">**Secure the AI Software Supply Chain:**</span> [Link](https://www.linuxfoundation.org/resources/publications/open-source-software-supply-chain-security)
+- <span style="color:red">**Retrieval vs. poison — Fighting AI supply chain attacks:**</span> [Link](https://www.elastic.co/security-labs/elastic-users-protected-from-suddenicon-supply-chain-attack)
+- <span style="color:red">**Detecting Poisoned AI Models:**</span> [Link](https://arxiv.org/pdf/2204.00032)
+- <span style="color:red">**Secure the AI Software Supply Chain:**</span> [Link](https://www.linuxfoundation.org/resources/publications/open-source-software-supply-chain-security)
