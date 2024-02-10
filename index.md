@@ -4,16 +4,16 @@ layout: col-sidebar
 title: OWASP Product Security Guide
 tags: example-tag
 level: 2
-type: 
+type: Documentation
 pitch: The OWASP Product Security Guide project educates developers and organizations on security considerations for various products, offering a curated list of vulnerabilities and promoting awareness and solutions within the development community.
 
 ---
 
 <img src="Asset/OWASP Product Security Guide Logo.png" width="500" height ="300">
 
-This page is the OWASP product security guide. It has two parts:  
-1. [How products are being attacked/exploited](#how-products-are-being-attacked/exploited)  
-2. [How to secure products](#how-to-secure-products)
+This page is the OWASP product security guide. It has three parts:  
+1. [How products are being attacked?](#how-products-are-being-attacked?)  
+2. [How to secure products?](#how-to-secure-products?)
 3. [Role of AI/LLM in product security](#role-of-AI/LLM-product-security)  
   
 Application security focuses on code-level vulnerabilities, while product security addresses broader aspects like design flaws and supply chain risks. Rising concerns in privacy and security stem from AI/LLMs, posing threats like data breaches, biased algorithms, and manipulation of personal information. This guide serves as a document offering insights on designing, creating, testing, and procuring secure and privacy-preserving products.
@@ -25,10 +25,10 @@ See also [this useful recording](https://youtu.be/ol-z_ShulCc?si=xmPFkpjrwrxNYQS
 
 Please provide your input through pull requests / submitting issues (see [repo](https://owasp.org/www-project-product-security-guide/#)) or emailing the project lead, and let's make this guide better and better. Many thanks to [Scott Bauer](https://www.linkedin.com/in/scott-bauer-90a55531/overlay/about-this-profile/), lead product security at Qualcomm, for his great contributions.
 
-# How products are being attacked/exploited  
+# How products are being attacked?
 SDLC and [supply chain vulnerabilities](https://www.fortinet.com/resources/cyberglossary/supply-chain-attacks) are exploited through various methods. In the [SDLC](https://mediasmarts.ca/digital-media-literacy/digital-issues/cyber-security/cyber-security-software-threats), attackers leverage weaknesses in development, testing, or deployment phases, injecting malicious code or compromising tools and libraries. Supply chain attacks involve infiltrating trusted vendors or third-party components to distribute malware or tamper with updates, compromising downstream systems. Techniques like code injection, dependency confusion, or hijacking exploit authentication, authorization, or distribution weaknesses, leading to breaches, data theft, or system compromise. These highlight the [critical need for robust security measures](https://jfrog.com/blog/the-importance-of-prioritizing-product-security/) across the software development and distribution lifecycle. Products confront diverse attack vectors, including malware injection, phishing, and supply chain compromises, underscoring the need for comprehensive security measures throughout their lifecycle.
 
-#  How to secure products
+#  How to secure products?
 
 ## Phase 1: Requirements
 
