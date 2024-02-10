@@ -32,19 +32,19 @@ SDLC and [supply chain vulnerabilities](https://www.fortinet.com/resources/cyber
 
 ## Phase 1: Requirements
 
-During this initial stage, new feature requirements are gathered from different stakeholders. It is crucial to recognize any security considerations associated with the functional requirements being gathered for the upcoming release.
+During this initial stage, new feature requirements are gathered from different stakeholders. It is crucial to recognize any <span style="color:blue">security considerations</span> associated with the functional requirements being gathered for the upcoming release.
 
-**Sample functional requirement:** user needs the ability to verify their contact information before they are able to renew their membership.
+- **Sample functional requirement:** user needs the ability to verify their contact information before they are able to renew their membership.
 
-**Sample security consideration:** users should be able to see only their own contact information and no one else’s.
+- **Sample <span style="color:blue">security consideration:</span>** users should be able to see only their own contact information and no one else’s.
 
 ## Phase 2: Design
 
 This stage converts in-scope requirements into a plan for how the actual application should appear. Functional requirements outline actions to take place, while security requirements concentrate on actions to avoid.
 
-**Sample functional design:** page should retrieve the user’s name, email, phone, and address from CUSTOMER_INFO table in the database and display it on screen.
+- **Sample functional design:** page should retrieve the user’s name, email, phone, and address from CUSTOMER_INFO table in the database and display it on screen.
 
-**Sample security concern:** we must verify that the user has a valid session token before retrieving information from the database. If absent, the user should be redirected to the login page.
+- **Sample <span style="color:blue">security concern:</span>** we must verify that the user has a valid session token before retrieving information from the database. If absent, the user should be redirected to the login page.
 
 ## Phase 3: Development
 
@@ -71,32 +71,32 @@ The narrative continues beyond the application release. Vulnerabilities, initial
 
 The development team must then patch these vulnerabilities, a process that might necessitate substantial rewrites of application functionality. Vulnerabilities at this stage can also originate from external penetration tests by ethical hackers or submissions through **bug bounty** programs. Addressing such production issues requires careful planning and inclusion in future releases.
 
-## AI/LLMs in SDLC and Supply Chain Attacks: A Double-Edged Sword
+## Role of AI/LLM in product security
 
 **Benefits of AI/LLMs in SDLC and Supply Chain:**
 
-- **Automated Testing:** `LLMs can analyze code for potential issues, identifying bugs and vulnerabilities faster than manual testing.`  
-- **Code Generation:** `AI can automate repetitive tasks like generating boilerplate code, freeing developers for more complex work.`  
-- **Threat Detection:** `AI can analyze vast amounts of data to identify suspicious activity and potential supply chain attacks.`  
-- **Security Hardening:** `AI can suggest security best practices and help developers write more secure code.`
+- <span style="color:blue">**Automated Testing:**</span> LLMs can analyze code for potential issues, identifying bugs and vulnerabilities faster than manual testing.
+- <span style="color:blue">**Code Generation:**</span> AI can automate repetitive tasks like generating boilerplate code, freeing developers for more complex work.
+- <span style="color:blue">**Threat Detection:**</span> AI can analyze vast amounts of data to identify suspicious activity and potential supply chain attacks.
+- <span style="color:blue">**Security Hardening:**</span> AI can suggest security best practices and help developers write more secure code.
 
 **Risks and Challenges:**
 
-- **AI Bias:** `Biases in training data can lead to biased AI models, potentially introducing vulnerabilities or discriminatory practices.`  
-- **Poisoning Attacks:** `Malicious actors can manipulate training data or models to inject harmful code or misinformation.`  
-- **Black Box Problem:** `The complex nature of AI makes it difficult to understand how decisions are made, hindering root cause analysis and security audits.`  
-- **Dependency Management:** `Managing dependencies on external AI models and libraries introduces additional security risks.`
+- <span style="color:blue">**AI Bias:**</span> Biases in training data can lead to biased AI models, potentially introducing vulnerabilities or discriminatory practices.
+- <span style="color:blue">**Poisoning Attacks:**</span> Malicious actors can manipulate training data or models to inject harmful code or misinformation.
+- <span style="color:blue">**Black Box Problem:**</span> The complex nature of AI makes it difficult to understand how decisions are made, hindering root cause analysis and security audits.
+- <span style="color:blue">**Dependency Management:**</span> Managing dependencies on external AI models and libraries introduces additional security risks.
 
 **Mitigating the Risks:**
 
-- **Data Quality:** `Invest in high-quality, unbiased training data for AI models.`  
-- **Security Awareness:** `Train developers and security teams on AI security risks and best practices.`  
-- **Model Testing & Auditing:** `Regularly test and audit AI models for bias, vulnerabilities, and unintended consequences.`  
-- **Dependency Management:** `Implement secure practices for managing and updating external AI dependencies.`  
-- **Transparency & Explainability:** `Advocate for the development of more transparent and explainable AI models.`
+- <span style="color:blue">**Data Quality:**</span> Invest in high-quality, unbiased training data for AI models.
+- <span style="color:blue">**Security Awareness:**</span> Train developers and security teams on AI security risks and best practices.
+- <span style="color:blue">**Model Testing & Auditing:**</span> Regularly test and audit AI models for bias, vulnerabilities, and unintended consequences.
+- <span style="color:blue">**Dependency Management:**</span> Implement secure practices for managing and updating external AI dependencies.
+- <span style="color:blue">**Transparency & Explainability:**</span> Advocate for the development of more transparent and explainable AI models.
 
 **Additional Resources:**
 
-- **Retrieval vs. poison — Fighting AI supply chain attacks:** [Link](https://www.elastic.co/security-labs/elastic-users-protected-from-suddenicon-supply-chain-attack)  
-- **Detecting Poisoned AI Models:** [Link](https://arxiv.org/pdf/2204.00032)  
-- **Secure the AI Software Supply Chain:** [Link](https://www.linuxfoundation.org/resources/publications/open-source-software-supply-chain-security)
+- <span style="color:blue">**Retrieval vs. poison — Fighting AI supply chain attacks:**</span> [Link](https://www.elastic.co/security-labs/elastic-users-protected-from-suddenicon-supply-chain-attack)
+- <span style="color:blue">**Detecting Poisoned AI Models:**</span> [Link](https://arxiv.org/pdf/2204.00032)
+- <span style="color:blue">**Secure the AI Software Supply Chain:**</span> [Link](https://www.linuxfoundation.org/resources/publications/open-source-software-supply-chain-security)
