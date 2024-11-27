@@ -7,7 +7,7 @@ type: Documentation
 pitch: The OWASP Product Security Guide educates developers and organizations on securing products, addressing vulnerabilities, and integrating security into development lifecycles.
 ---
 
-<img src="Asset/OWASP_Product_Security_Guide_Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
+<img src="Asset/OWASP Product Security Guide Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
 
 Welcome to the **OWASP Product Security Guide**! This guide provides actionable insights into:
 1. [How products are being attacked?](#how-products-are-being-attacked)
