@@ -3,15 +3,3 @@ remote_theme: "owasp/www--site-theme@main"
 plugins:
   - jekyll-include-cache-0.2.0
 
-# Additional Configuration
-markdown: kramdown
-exclude:
-  - vendor
-
-# Optional Metadata
-description: "A comprehensive guide for secure product development, aligned with OWASP principles."
-author: "OWASP Team"
-categories:
-  - security
-  - product-development
-  - AI
