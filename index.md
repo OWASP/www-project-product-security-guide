@@ -30,70 +30,131 @@ SDLC and [supply chain vulnerabilities](https://www.fortinet.com/resources/cyber
 
 #  How to secure products?
 
-## Phase 1: Requirements
+## Part 1: Foundations of Secure Product Design
 
-During this initial stage, new feature requirements are gathered from different stakeholders. It is crucial to recognize any <span style="color:blue">security considerations</span> associated with the functional requirements being gathered for the upcoming release.
+### Threat Modeling
 
-- **<span style="color:blue">Sample functional requirement:</span>** user needs the ability to verify their contact information before they are able to renew their membership.
+During the early stages of development, identifying threats and vulnerabilities ensures the product is designed with security in mind.
 
-- **<span style="color:blue">Sample security consideration:</span>** users should be able to see only their own contact information and no one else’s.
+- **Identifying assets, threats, and attack vectors**:
+  - Assets: Determine what needs protection (e.g., sensitive data, APIs).
+  - Threats: Identify potential adversaries (e.g., malicious insiders, hackers).
+  - Attack Vectors: Understand how assets could be exploited (e.g., SQL injection, XSS).
 
-## Phase 2: Design
+- **Tools and techniques**:
+  - **STRIDE**: Focuses on Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.
+  - **PASTA**: A risk-centric framework combining business and technical perspectives to identify and prioritize threats.
 
-This stage converts in-scope requirements into a plan for how the actual application should appear. Functional requirements outline actions to take place, while security requirements concentrate on actions to avoid.
+- **Sample integration into SDLC**: Include threat modeling in design reviews, ensuring high-priority risks are addressed before development begins.
 
-- **<span style="color:blue">Sample functional design:</span>** page should retrieve the user’s name, email, phone, and address from CUSTOMER_INFO table in the database and display it on screen.
+---
 
-- **<span style="color:blue">Sample security concern:</span>** we must verify that the user has a valid session token before retrieving information from the database. If absent, the user should be redirected to the login page.
+### Secure Architecture Principles
 
-## Phase 3: Development
+A secure product architecture forms the foundation for protecting the product throughout its lifecycle.
 
-When it's time to implement the design, ensuring code quality from a security perspective becomes the focus. Established secure coding guidelines and code reviews verify adherence to these standards, which can be manual or automated using technologies like [static application security testing (SAST)](https://en.wikipedia.org/wiki/Static_application_security_testing). Modern application developers must consider not only their own code but also rely on existing functionality, typically from free open source components, to expedite feature delivery. Over 90% of modern deployed applications utilize such components, which are assessed using [Software Composition Analysis (SCA)](https://www.g2.com/categories/software-composition-analysis) tools.
+- **Defense-in-depth**: Layer security controls to mitigate risks from multiple angles (e.g., firewalls, encryption, authentication).
+- **Principle of least privilege**: Ensure users and processes only have access essential for their functions.
+- **Secure communication and encryption**:
+  - Use TLS for secure data transmission.
+  - Encrypt data at rest using strong algorithms (e.g., AES-256).
+  - Store keys securely using key vaults.
+- **Sample guideline**: Implement secure coding practices, such as validating input and sanitizing output, to prevent injection attacks.
 
-Secure coding guidelines, in this case, may include:  
-- Using parameterized, read-only SQL queries to read data from the database and minimize chances that anyone can ever commandeer these queries for nefarious purposes  
-- Validating user inputs before processing data contained in them  
-- Sanitizing any data that’s being sent back out to the user from the database  
-- Checking open source libraries for vulnerabilities before using them
+---
 
-## Phase 4: Verification
+### Secure Configuration Management
 
-The Verification phase involves a testing cycle to ensure applications meet the original design and requirements. It's a place to introduce automated security testing using various technologies. The application is not deployed unless these tests pass. This phase often includes automated tools like CI/CD pipelines to control verification and release.
+Effective configuration management ensures the product remains secure even as it evolves.
 
-Verification at this phase may include:  
-- Automated tests that express the critical paths of your application  
-- Automated execution of application unit tests that verify the correctness of the underlying application  
-- Automated deployment tools that dynamically swap in application secrets to be used in a production environment
+- **Hardened defaults**: Disable unnecessary features and enforce strong defaults (e.g., password complexity).
+- **Minimizing configuration drift**: Use tools like Ansible or Terraform to maintain consistent environments.
+- **Patch management**:
+  - Regularly update software to address vulnerabilities.
+  - Monitor CVEs and automate updates where possible.
 
-## Phase 5: Maintenance and Evolution
+---
 
-The narrative continues beyond the application release. Vulnerabilities, initially overlooked, may surface long after the release. These issues may exist in the code developers crafted but are increasingly detected in the foundational open-source components comprising the application. This results in a rise in [zero-days](https://en.wikipedia.org/wiki/Zero-day_(computing))—previously unknown vulnerabilities identified in production by the application’s maintainers.
+## Part 2: Securing the Development Lifecycle (SDLC)
 
-The development team must then patch these vulnerabilities, a process that might necessitate substantial rewrites of application functionality. Vulnerabilities at this stage can also originate from external penetration tests by ethical hackers or submissions through [bug bounty](https://hackerone.com/bug-bounty-programs) programs. Addressing such production issues requires careful planning and inclusion in future releases.
+### Security in Requirements
 
-## Role of AI/LLM in product security
+Identifying security considerations during the requirements phase is critical for proactive risk mitigation.
 
-**Benefits of AI/LLMs in SDLC and Supply Chain:**
+- **Sample functional requirement**: Allow users to upload profile images.
+- **Sample security consideration**: Validate file types and enforce size limits to prevent malicious uploads.
 
-- <span style="color:blue">**Automated Testing:**</span> LLMs can analyze code for potential issues, identifying bugs and vulnerabilities faster than manual testing.
-- <span style="color:blue">**Code Generation:**</span> AI can automate repetitive tasks like generating boilerplate code, freeing developers for more complex work.
-- <span style="color:blue">**Threat Detection:**</span> AI can analyze vast amounts of data to identify suspicious activity and potential supply chain attacks.
-- <span style="color:blue">**Security Hardening:**</span> AI can suggest security best practices and help developers write more secure code.
+---
 
-**Risks and Challenges:**
+### Secure Development Practices
 
-- <span style="color:blue">**AI Bias:**</span> Biases in training data can lead to biased AI models, potentially introducing vulnerabilities or discriminatory practices.
-- <span style="color:blue">**Poisoning Attacks:**</span> Malicious actors can manipulate training data or models to inject harmful code or misinformation.
-- <span style="color:blue">**Black Box Problem:**</span> The complex nature of AI makes it difficult to understand how decisions are made, hindering root cause analysis and security audits.
-- <span style="color:blue">**Dependency Management:**</span> Managing dependencies on external AI models and libraries introduces additional security risks.
+Implementing secure coding practices reduces vulnerabilities in the final product.
 
-**Mitigating the Risks:**
+- **Writing secure code**:
+  - Validate inputs, sanitize outputs, and handle errors without exposing sensitive data.
+- **Secure API design**: Use authentication (e.g., OAuth) and enforce role-based access controls.
+- **Leveraging SAST and SCA**: Use tools like OWASP Dependency-Check to identify vulnerabilities in third-party libraries.
 
-- <span style="color:blue">**Data Quality:**</span> Invest in high-quality, unbiased training data for AI models.
-- <span style="color:blue">**Security Awareness:**</span> Train developers and security teams on AI security risks and best practices.
-- <span style="color:blue">**Model Testing & Auditing:**</span> Regularly test and audit AI models for bias, vulnerabilities, and unintended consequences.
-- <span style="color:blue">**Dependency Management:**</span> Implement secure practices for managing and updating external AI dependencies.
-- <span style="color:blue">**Transparency & Explainability:**</span> Advocate for the development of more transparent and explainable AI models.
+---
+
+### Security Testing and Verification
+
+Security testing ensures the product meets its design specifications and resists common attack vectors.
+
+- **Automated testing**:
+  - Use SAST tools like CodeQL for static code analysis.
+  - Implement DAST tools (e.g., OWASP ZAP) for dynamic testing.
+- **Penetration testing**: Simulate real-world attacks to identify gaps missed by automated tools.
+- **Sample CI/CD integration**: Automate security tests in the pipeline to catch vulnerabilities early.
+
+---
+
+### Secure Deployment and Operations
+
+Ensuring secure deployment and ongoing operations minimizes risks during production.
+
+- **Configuration management**: Use Infrastructure as Code (IaC) tools to enforce consistent, secure environments.
+- **Incident response planning**: Create clear procedures for identifying, analyzing, and resolving security incidents.
+- **Post-deployment vulnerability management**: Monitor for zero-day vulnerabilities and release patches promptly.
+
+---
+
+## Part 3: Advanced Topics
+
+### Security for Emerging Technologies
+
+Modern technologies bring unique challenges that must be addressed early.
+
+- **AI/LLMs**:
+  - **Benefits**: Automated code analysis, threat detection, and incident response.
+  - **Risks**: Bias in training data, poisoning attacks, and dependency vulnerabilities.
+  - **Mitigation**: Use unbiased training datasets, test models regularly, and ensure transparency.
+- **IoT and cloud-native applications**: Use strong authentication, encrypted communications, and container security best practices.
+
+---
+
+### DevSecOps and Continuous Security
+
+Integrating security into the DevOps workflow ensures it is a continuous, automated process.
+
+- **Shifting left**: Perform security checks early and often, such as during code commits or pull requests.
+- **Automating testing**: Incorporate tools like OWASP ZAP into CI/CD pipelines for real-time security feedback.
+- **Security champions**: Train team members to advocate for security throughout the SDLC.
+
+---
+
+### AI/LLM in Security
+
+AI and LLMs are transforming security but come with their own challenges.
+
+- **Applications**:
+  - Automating vulnerability detection and threat intelligence.
+  - Incident response through AI-driven analysis.
+- **Risks**: Introduce potential biases, poisoning attacks, and challenges in explainability.
+- **Mitigation**:
+  - Ensure high-quality training data.
+  - Audit models regularly for unintended behaviors.
+  - Advocate for transparent AI solutions to build trust.
 
 **Additional Resources:**
 
