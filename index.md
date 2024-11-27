@@ -9,7 +9,8 @@ pitch: Learn how to secure products effectively with actionable insights into vu
 
 <img src="Asset/OWASP_Product_Security_Guide_Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
 
-<div style="text-align:center; margin-top:20px; color:#0033cc; font-size:24px; font-weight:bold;">Welcome to the OWASP Product Security Guide</div>
+<div style="color:blue; font-size:24px; font-weight:bold; text-align:center;">Welcome to the OWASP Product Security Guide!</div>
+
 
 <p style="text-align:center; font-size:16px; margin-top:10px;">
 Your trusted resource for securing modern products with practical insights, cutting-edge tools, and actionable recommendations.
