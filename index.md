@@ -20,7 +20,7 @@ Application security focuses on code-level vulnerabilities, while **<span style=
 
 ---
 
-<div style="color:purple; font-size:18px;"><b>Additional Resources</b></div>
+<div style="color:purple; font-size:18px;"><b>Resources</b></div>
 See also [this useful recording](https://youtu.be/ol-z_ShulCc?si=xmPFkpjrwrxNYQSX) or [the slides](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) from [Rob van der Veer's talk](https://sched.co/1F9DT) at the OWASP Global appsec event in Dublin on February 15 2023.  
 
 Check out the Appsec Podcast episode on this guide ([<span style="color:blue;">audio</span>](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide), [<span style="color:blue;">video</span>](https://www.youtube.com/watch?v=SLdn3AwlCAk&)), or the [September 2023 MLSecops Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology).  
