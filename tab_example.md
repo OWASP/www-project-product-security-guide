@@ -1,6 +1,6 @@
 ---
 title: OWASP Product Security Guide
-layout: null
+layout: default
 tab: true
 order: 1
 tags: product-security, OWASP, SDLC, AI-security
