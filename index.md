@@ -7,9 +7,9 @@ type: Documentation
 pitch: Learn how to secure products effectively with actionable insights into vulnerabilities, design principles, and development lifecycle strategies. Discover the critical role of AI in modern product security.
 ---
 
-<img src="Asset/OWASP_Product_Security_Guide_Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
+<img src="Asset/OWASP Product Security Guide Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
 
-<div style="color:blue; font-size:24px; font-weight:bold; text-align:center;">Welcome to the OWASP Product Security Guide!</div>
+<div style="color:blue; font-size:20px;"><b>Welcome to the OWASP Product Security Guide!</b></div>
 
 
 <p style="text-align:center; font-size:16px; margin-top:10px;">
