@@ -1,140 +1,118 @@
 ---
 layout: col-sidebar
 title: OWASP Product Security Guide
-tags: example-tag
+tags: product-security, AI, SDLC, OWASP
 level: 2
 type: Documentation
-pitch: The OWASP Product Security Guide project educates developers and organizations on security considerations for various products, offering a curated list of vulnerabilities and promoting awareness and solutions within the development community.
+pitch: Learn how to secure products effectively with actionable insights into vulnerabilities, design principles, and development lifecycle strategies. Discover the critical role of AI in modern product security.
 ---
 
-<img src="Asset/OWASP Product Security Guide Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
+<img src="Asset/OWASP_Product_Security_Guide_Logo.png" width="500" height="300" alt="OWASP Product Security Guide Logo">
 
-<div style="color:blue; font-size:20px;"><b>Welcome to the OWASP Product Security Guide!</b></div>
+<div style="text-align:center; margin-top:20px; color:#0033cc; font-size:24px; font-weight:bold;">Welcome to the OWASP Product Security Guide</div>
 
-This page is the OWASP product security guide. It has three parts:  
-1. [<span style="color:green;">How products are being attacked?</span>](#how-products-are-being-attacked?)  
-2. [<span style="color:green;">How to secure products?</span>](#how-to-secure-products?)  
-3. [<span style="color:green;">Role of AI/LLM in product security</span>](#role-of-AI/LLM-product-security)  
-
-Application security focuses on code-level vulnerabilities, while **<span style="color:orange;">product security</span>** addresses broader aspects like design flaws and supply chain risks. Rising concerns in **<span style="color:red;">privacy</span>** and **<span style="color:red;">security</span>** stem from AI/LLMs, posing threats like data breaches, biased algorithms, and manipulation of personal information. This guide serves as a document offering insights on designing, creating, testing, and procuring secure and privacy-preserving products.
+<p style="text-align:center; font-size:16px; margin-top:10px;">
+Your trusted resource for securing modern products with practical insights, cutting-edge tools, and actionable recommendations.
+</p>
 
 ---
 
-<div style="color:purple; font-size:18px;"><b>Additional Resources</b></div>
-See also [this useful recording](https://youtu.be/ol-z_ShulCc?si=xmPFkpjrwrxNYQSX) or [the slides](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) from [Rob van der Veer's talk](https://sched.co/1F9DT) at the OWASP Global appsec event in Dublin on February 15 2023.  
+<div style="color:#6600cc; font-size:20px; font-weight:bold;">What This Guide Covers</div>
 
-Check out the Appsec Podcast episode on this guide ([<span style="color:blue;">audio</span>](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide), [<span style="color:blue;">video</span>](https://www.youtube.com/watch?v=SLdn3AwlCAk&)), or the [September 2023 MLSecops Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology).  
+This guide focuses on three key aspects:
+1. [<span style="color:green;">How products are being attacked?</span>](#how-products-are-being-attacked)
+2. [<span style="color:green;">How to secure products?</span>](#how-to-secure-products)
+3. [<span style="color:green;">The role of AI/LLM in product security</span>](#role-of-ai-llm-in-product-security)
 
-If you want the short story, check out [<span style="color:blue;">the 5-minute product security quick-talk</span>](https://youtu.be/D6YRQYHVHao?si=Ua_TG5tqy_YiYaVG).
-
-<p align="left"><a href="https://youtu.be/D6YRQYHVHao?si=cMom_KcEa4sIVt6k" target="_blank" rel="noopener noreferrer"><img src="Asset/talkvideo.jpeg" width="160" height="160" border="1" alt="5-minute talk thumbnail"/> </a></p>
-
----
-
-<div style="color:purple; font-size:18px;"><b>Contribute</b></div>
-Please provide your input through pull requests / submitting issues (see [repo](https://owasp.org/www-project-product-security-guide/#)) or emailing the project lead, and let's make this guide better and better.  
-
-Many thanks to [<span style="color:blue;">Scott Bauer</span>](https://www.linkedin.com/in/scott-bauer-90a55531/overlay/about-this-profile/), lead product security at Qualcomm, for his great contributions.
+Modern security demands go beyond application-level issues to address **<span style="color:orange;">product-level risks</span>** like design flaws, supply chain vulnerabilities, and challenges posed by **AI/LLMs**. This guide will help you build secure, privacy-preserving, and resilient products.
 
 ---
 
-# <span style="color:purple;">How products are being attacked?</span>
+<div style="color:#6600cc; font-size:20px; font-weight:bold;">Featured Resources</div>
 
-**SDLC** and [supply chain vulnerabilities](https://www.fortinet.com/resources/cyberglossary/supply-chain-attacks) are exploited through various methods.  
+Get up to speed with these quick resources:
+- [<span style="color:blue;">Recording: Rob van der Veer’s OWASP Talk</span>](https://youtu.be/ol-z_ShulCc?si=xmPFkpjrwrxNYQSX)
+- [<span style="color:blue;">Slides from OWASP Global AppSec 2023</span>](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true)
+- AppSec Podcast ([Audio](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide), [Video](https://www.youtube.com/watch?v=SLdn3AwlCAk&))
+- [<span style="color:blue;">The 5-Minute Product Security Quick-Talk</span>](https://youtu.be/D6YRQYHVHao?si=Ua_TG5tqy_YiYaVG)
 
-In the [<span style="color:blue;">SDLC</span>](https://mediasmarts.ca/digital-media-literacy/digital-issues/cyber-security/cyber-security-software-threats), attackers leverage weaknesses in development, testing, or deployment phases, injecting malicious code or compromising tools and libraries. Supply chain attacks involve infiltrating trusted vendors or third-party components to distribute malware or tamper with updates, compromising downstream systems.
-
-Techniques like **<span style="color:green;">code injection</span>**, **<span style="color:green;">dependency confusion</span>**, or **<span style="color:green;">hijacking</span>** exploit authentication, authorization, or distribution weaknesses, leading to breaches, data theft, or system compromise.  
-
-These highlight the [critical need for robust security measures](https://jfrog.com/blog/the-importance-of-prioritizing-product-security/) across the software development and distribution lifecycle.
-
----
-
-# <span style="color:purple;">How to secure products?</span>
-
-## Part 1: Foundations of Secure Product Design
-
-### <span style="color:green;">Threat Modeling</span>
-
-During the early stages of development, identifying threats and vulnerabilities ensures the product is designed with security in mind.
-
-- **Identifying assets, threats, and attack vectors**:
-  - Assets: Determine what needs protection (e.g., sensitive data, APIs).
-  - Threats: Identify potential adversaries (e.g., malicious insiders, hackers).
-  - Attack Vectors: Understand how assets could be exploited (e.g., SQL injection, XSS).
-
-- **Tools and techniques**:
-  - **STRIDE**: Focuses on Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.
-  - **PASTA**: A risk-centric framework combining business and technical perspectives to identify and prioritize threats.
-
-- **Sample integration into SDLC**: Include threat modeling in design reviews, ensuring high-priority risks are addressed before development begins.
+<div style="text-align:center; margin:20px;">
+<a href="https://youtu.be/D6YRQYHVHao?si=cMom_KcEa4sIVt6k" target="_blank" rel="noopener noreferrer">
+<img src="Asset/talkvideo.jpeg" width="180" height="180" alt="5-Minute Talk Thumbnail" style="border-radius:10px;"/>
+</a>
+</div>
 
 ---
 
-### <span style="color:green;">Secure Architecture Principles</span>
+<div style="color:#6600cc; font-size:20px; font-weight:bold;">Get Involved</div>
 
-A secure product architecture forms the foundation for protecting the product throughout its lifecycle.
+Help improve this guide with your contributions!  
+- Submit feedback via [<span style="color:blue;">pull requests</span>](https://owasp.org/www-project-product-security-guide/#) or [<span style="color:blue;">issues</span>](https://github.com/OWASP/www-project-product-security-guide/issues).  
+- Share ideas with the project lead via email.  
 
-- **Defense-in-depth**: Layer security controls to mitigate risks from multiple angles (e.g., firewalls, encryption, authentication).
-- **Principle of least privilege**: Ensure users and processes only have access essential for their functions.
-- **Secure communication and encryption**:
-  - Use TLS for secure data transmission.
-  - Encrypt data at rest using strong algorithms (e.g., AES-256).
-  - Store keys securely using key vaults.
-- **Sample guideline**: Implement secure coding practices, such as validating input and sanitizing output, to prevent injection attacks.
+Special thanks to **[Scott Bauer](https://www.linkedin.com/in/scott-bauer-90a55531/overlay/about-this-profile/)**, Lead Product Security at Qualcomm, for his valuable contributions.
 
 ---
 
-### <span style="color:green;">Secure Configuration Management</span>
+## <span style="color:purple;">How Products Are Being Attacked?</span>
 
-Effective configuration management ensures the product remains secure even as it evolves.
+Attackers exploit vulnerabilities in the **SDLC** and **supply chain** through various means:
 
-- **Hardened defaults**: Disable unnecessary features and enforce strong defaults (e.g., password complexity).
-- **Minimizing configuration drift**: Use tools like Ansible or Terraform to maintain consistent environments.
-- **Patch management**:
-  - Regularly update software to address vulnerabilities.
-  - Monitor CVEs and automate updates where possible.
+- **Code Injection**: Exploiting weak input validation to execute unauthorized commands.
+- **Dependency Confusion**: Replacing trusted libraries with malicious alternatives.
+- **Hijacking**: Compromising authentication and authorization mechanisms.
 
----
-
-## Part 2: Securing the Development Lifecycle (SDLC)
-
-### <span style="color:green;">Security in Requirements</span>
-
-Identifying security considerations during the requirements phase is critical for proactive risk mitigation.
-
-- **Sample functional requirement**: Allow users to upload profile images.
-- **Sample security consideration**: Validate file types and enforce size limits to prevent malicious uploads.
+These methods emphasize the need for **robust security measures** across the product lifecycle. Learn more about key threats and techniques [here](https://jfrog.com/blog/the-importance-of-prioritizing-product-security/).
 
 ---
 
-### <span style="color:green;">Secure Development Practices</span>
+## <span style="color:purple;">How to Secure Products?</span>
 
-Implementing secure coding practices reduces vulnerabilities in the final product.
+### Part 1: Foundations of Secure Product Design
 
-- **Writing secure code**:
-  - Validate inputs, sanitize outputs, and handle errors without exposing sensitive data.
-- **Secure API design**: Use authentication (e.g., OAuth) and enforce role-based access controls.
-- **Leveraging SAST and SCA**: Use tools like OWASP Dependency-Check to identify vulnerabilities in third-party libraries.
+#### <span style="color:green;">Threat Modeling</span>
+- **Identify**: Key assets, potential threats, and attack vectors.
+- **Frameworks**: Use tools like **STRIDE** or **PASTA** to model risks.
+- **SDLC Integration**: Incorporate threat modeling into design reviews and planning.
 
----
+#### <span style="color:green;">Secure Architecture Principles</span>
+- Implement **Defense-in-Depth** with layered controls.
+- Enforce **Least Privilege** and secure communication with **TLS** and **AES-256** encryption.
 
-### <span style="color:green;">Security Testing and Verification</span>
-
-Security testing ensures the product meets its design specifications and resists common attack vectors.
-
-- **Automated testing**:
-  - Use SAST tools like CodeQL for static code analysis.
-  - Implement DAST tools (e.g., OWASP ZAP) for dynamic testing.
-- **Penetration testing**: Simulate real-world attacks to identify gaps missed by automated tools.
-- **Sample CI/CD integration**: Automate security tests in the pipeline to catch vulnerabilities early.
+#### <span style="color:green;">Secure Configuration Management</span>
+- Enforce hardened defaults and automate updates using tools like **Ansible** or **Terraform**.
+- Monitor CVEs and proactively address vulnerabilities.
 
 ---
 
-### <span style="color:green;">Secure Deployment and Operations</span>
+### Part 2: Securing the Development Lifecycle (SDLC)
 
-Ensuring secure deployment and ongoing operations minimizes risks during production.
+#### <span style="color:green;">Secure Development Practices</span>
+- Write secure code with validated inputs and sanitized outputs.
+- Use **OWASP Dependency-Check** to ensure library security.
 
-- **Configuration management**: Use Infrastructure as Code (IaC) tools to enforce consistent, secure environments.
-- **Incident response planning**: Create clear procedures for identifying, analyzing, and resolving security incidents.
-- **Post-deployment vulnerability management**: Monitor for zero-day vulnerabilities and release patches promptly.
+#### <span style="color:green;">Testing and Verification</span>
+- Use tools like **OWASP ZAP** for **SAST** and **DAST**.
+- Conduct penetration tests and simulate real-world attacks.
+
+#### <span style="color:green;">Secure Deployment and Operations</span>
+- Plan incident response and monitor vulnerabilities after deployment.
+
+---
+
+## <span style="color:purple;">The Role of AI/LLM in Product Security</span>
+
+AI/LLMs are transforming security but also introducing new risks:
+- **Benefits**: Automated code analysis, threat detection, and incident response.
+- **Challenges**: Bias, poisoning attacks, and dependency risks.
+- **Mitigation**: Use unbiased training data and audit models regularly.
+
+---
+
+## <span style="color:#6600cc; font-size:20px; font-weight:bold;">Key Takeaways</span>
+
+- **Comprehensive Guide**: Covers threats, defenses, and best practices.
+- **Action-Oriented**: Includes actionable steps and tool recommendations.
+- **OWASP Tools**: Leverage trusted resources like the **OWASP Top 10**, **Dependency-Check**, and **ZAP**.
+
+Explore the OWASP Product Security Guide to build secure, privacy-first, and resilient products!
