@@ -6,9 +6,7 @@ order: 1
 tags: example-tag
 ---
 
-## Example
-
-# <span style="color:blue;">**OWASP Product Security Guide**</span>
+## <span style="color:blue;">**OWASP Product Security Guide**</span>
 
 This guide provides practical insights and structured recommendations for building secure, resilient, and privacy-preserving products.
 
