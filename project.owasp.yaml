@@ -1,0 +1,21 @@
+audience:
+  - breaker
+  - builder
+leaders:
+  - name: Yuvraj Singh
+    email: Yuvraj.singh@owasp.org
+    github: Yuvvi01
+level: 2
+name: OWASP Product Security Guide
+pitch: The OWASP Product Security Guide project educates developers and organizations on security considerations for various products, offering a curated
+  list of vulnerabilities and promoting awareness and solutions within the development community.
+repositories:
+  - name: www-project-product-security-guide
+    url: https://github.com/OWASP/www-project-product-security-guide
+    description: OWASP Foundation Web Repository
+tags:
+  - example-tag
+  - custom-tag-1
+  - custom-tag-2
+type: documentation
+website: https://owasp.org/www-project-product-security-guide
